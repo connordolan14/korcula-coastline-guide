@@ -2,8 +2,8 @@
 import React from 'react';
 
 interface PageHeaderProps {
-  title: string;
-  subtitle?: string;
+  title: string | React.ReactNode;
+  subtitle?: string | React.ReactNode;
   backgroundImage?: string;
   gradient?: boolean;
 }
@@ -30,11 +30,11 @@ const PageHeader = ({ title, subtitle, backgroundImage, gradient = false }: Page
           {title}
         </h1>
         {subtitle && (
-          <p className={`text-lg md:text-xl ${
+          <div className={`text-lg md:text-xl ${
             backgroundImage ? 'text-white/90' : 'text-muted-foreground'
           }`}>
             {subtitle}
-          </p>
+          </div>
         )}
       </div>
     </div>

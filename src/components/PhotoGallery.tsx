@@ -10,9 +10,10 @@ interface Photo {
 interface PhotoGalleryProps {
   photos: Photo[];
   title?: string;
+  onImageClick?: (index: number) => void;
 }
 
-const PhotoGallery = ({ photos, title }: PhotoGalleryProps) => {
+const PhotoGallery = ({ photos, title, onImageClick }: PhotoGalleryProps) => {
   return (
     <div className="space-y-4">
       {title && (
@@ -22,9 +23,10 @@ const PhotoGallery = ({ photos, title }: PhotoGalleryProps) => {
         {photos.map((photo, index) => (
           <div 
             key={photo.id}
-            className={`rounded-2xl overflow-hidden card-shadow card-hover ${
+            className={`rounded-2xl overflow-hidden card-shadow card-hover cursor-pointer ${
               index === 0 ? 'col-span-2 md:col-span-1' : ''
             }`}
+            onClick={() => onImageClick?.(index)}
           >
             <div className="aspect-square bg-primary/10">
               <img 
