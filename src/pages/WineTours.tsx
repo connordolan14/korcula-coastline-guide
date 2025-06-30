@@ -13,7 +13,7 @@ const WineTours = () => {
       rating: '4.6',
       reviews: '84',
       link: 'https://www.mergavicta.com/index.html#visit-us',
-      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80'
+      image: 'https://www.winedering.com/uploads/wineries/5383/big/img9834.jpg.webp'
     },
     {
       id: '2',
