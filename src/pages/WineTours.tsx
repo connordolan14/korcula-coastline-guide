@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import { ExternalLink, Grape, Star } from 'lucide-react';
@@ -24,7 +23,7 @@ const WineTours = () => {
       rating: '4.9',
       reviews: '336',
       link: 'https://www.facebook.com/winetoreta/',
-      image: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80'
+      image: 'https://vinarnice.hr/media/687199/toreta-degustacija.jpg?width=674&height=334&mode=crop'
     },
     {
       id: '3',
@@ -34,7 +33,7 @@ const WineTours = () => {
       rating: '4.7',
       reviews: '81',
       link: 'https://nericavina.com/',
-      image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&w=800&q=80'
+      image: 'https://www.nativecroatia.com/images/member_uploads/member_18e2d6d4a4e85b03556e2e0a85e53f28/dac26494d6ed168113c9c976430c0251eecfafeb.jpg'
     },
     {
       id: '4',
@@ -44,7 +43,7 @@ const WineTours = () => {
       rating: '4.8',
       reviews: '76',
       link: 'https://vinakrajancic.hr/homeeng/',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80'
+      image: 'https://total-croatia-news.com/wp-content/uploads/2016/11/140b52a229a0199a0b5b0f77e425d131.jpg'
     }
   ];
 
@@ -199,8 +198,8 @@ const WineTours = () => {
           
           <div className="mb-6">
             <img 
-              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80" 
-              alt="Wine tour banner"
+              src="/lovable-uploads/46e44d42-b8c8-489c-a5b1-5cad82ba2b07.png" 
+              alt="Wine tour route map"
               className="w-full h-32 md:h-48 object-cover rounded-2xl"
             />
           </div>
