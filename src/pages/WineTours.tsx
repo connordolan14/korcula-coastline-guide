@@ -200,7 +200,7 @@ const WineTours = () => {
             <img 
               src="/lovable-uploads/46e44d42-b8c8-489c-a5b1-5cad82ba2b07.png" 
               alt="Wine tour route map"
-              className="w-full h-32 md:h-48 object-cover rounded-2xl"
+              className="w-full object-contain rounded-2xl"
             />
           </div>
 
