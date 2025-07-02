@@ -1,10 +1,143 @@
-
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import ActivityCard from '../components/ActivityCard';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 
 const Itinerary = () => {
+  const weeklyEvents = [
+    {
+      date: 'Saturday, July 26',
+      events: [
+        {
+          title: 'Theatre play / Masks / UO Group',
+          time: '9-10pm',
+          location: 'Centar za kulturu Korčula',
+          city: 'Korčula'
+        },
+        {
+          title: 'Seeman\'s Night; koncert Matko i Brane',
+          time: '9-10pm',
+          location: 'Račišće',
+          city: 'Račišće'
+        }
+      ]
+    },
+    {
+      date: 'Sunday, July 27',
+      events: [
+        {
+          title: 'Grk Wine Festival 2025',
+          time: '9-11pm',
+          location: 'Lumbarda',
+          city: 'Lumbarda'
+        },
+        {
+          title: 'Summer in Postrana: Theater play Maske / Masks',
+          time: '9-10pm',
+          location: 'Kazalište u Pavuleta',
+          city: 'Žrnovo'
+        }
+      ]
+    },
+    {
+      date: 'Monday, July 28',
+      events: [
+        {
+          title: 'Moreška sword dance performance',
+          time: '9-10pm',
+          location: 'Ljetno kino Korcula',
+          city: 'Korčula'
+        },
+        {
+          title: 'Elementum - trio (cello, accordion and flute)',
+          time: '9-10pm',
+          location: 'Lumbarda 230a, 20263, Lumbarda, Croatia',
+          city: 'Lumbarda'
+        }
+      ]
+    },
+    {
+      date: 'Tuesday, July 29',
+      events: [
+        {
+          title: 'Ante Kriletić Jordes - Exhibition Opening',
+          time: '9-11pm',
+          location: 'Lumbarda 230a, 20263, Lumbarda, Croatia',
+          city: 'Lumbarda'
+        },
+        {
+          title: 'Festivity of St. Theodor and the Day of Town of Korčula',
+          time: '7-8:30pm',
+          location: 'Korcula',
+          city: 'Korčula'
+        }
+      ]
+    },
+    {
+      date: 'Wednesday, July 30',
+      events: [
+        {
+          title: 'Blato Wine and Dine - Okusi mirisi zavičaja',
+          time: '8:30pm-12:30am',
+          location: 'Blato, Croatia',
+          city: 'Blato'
+        },
+        {
+          title: 'Folklore Evening - KUD Ivo Lozica',
+          time: '9-10:30pm',
+          location: 'Lumbarda Trg',
+          city: 'Lumbarda'
+        },
+        {
+          title: 'Exhibition / Emil Bobanović Čolić',
+          time: '9-10pm',
+          location: 'Centar za kulturu Korčula',
+          city: 'Korčula'
+        }
+      ]
+    },
+    {
+      date: 'Thursday, July 31',
+      events: [
+        {
+          title: 'Children Art and Craft Fair',
+          time: '8-10:30pm',
+          location: 'Lumbarda',
+          city: 'Lumbarda'
+        },
+        {
+          title: 'Cinema / Naked Gun 4',
+          time: '9-10pm',
+          location: 'Centar za kulturu Korčula',
+          city: 'Korčula'
+        }
+      ]
+    },
+    {
+      date: 'Friday, August 1',
+      events: [
+        {
+          title: 'Blato Wine Night',
+          time: '9-11:30pm',
+          location: 'Gradski park blato',
+          city: 'Blato'
+        },
+        {
+          title: 'Mediterranean Cinema / Folle Mente',
+          time: '9-10pm',
+          location: 'Ljetno kino Korcula',
+          city: 'Korčula'
+        },
+        {
+          title: 'Theatre play for children / Grga Čvarak (4+) / Scena Gorica',
+          time: '8-9pm',
+          location: 'Centar za kulturu Korčula',
+          city: 'Korčula'
+        }
+      ]
+    }
+  ];
+
   const dayPlans = [
     {
       id: '1',
@@ -68,9 +201,47 @@ const Itinerary = () => {
     <div className="min-h-screen bg-background pb-20">
       <div className="container mx-auto px-4 py-6">
         <PageHeader 
-          title="Itinerary Ideas"
-          subtitle="Perfect day plans for your stay"
+          title="Week Schedule"
+          subtitle="Korčula Harbor Week 31"
         />
+
+        {/* Weekly Schedule Section */}
+        <div className="bg-card rounded-2xl p-6 mb-8 card-shadow">
+          <div className="flex items-center gap-2 mb-4">
+            <Calendar className="w-6 h-6 text-primary" />
+            <div>
+              <h2 className="text-2xl font-bold">Korčula Official Town Schedule</h2>
+              <p className="text-muted-foreground">Korcula Harbor Week 31</p>
+            </div>
+          </div>
+          
+          <div className="space-y-6">
+            {weeklyEvents.map((day, dayIndex) => (
+              <div key={dayIndex} className="border-l-4 border-primary pl-4">
+                <h3 className="text-lg font-semibold mb-3 text-primary">{day.date}</h3>
+                <div className="space-y-3">
+                  {day.events.map((event, eventIndex) => (
+                    <div key={eventIndex} className="bg-accent/20 rounded-lg p-4">
+                      <div className="flex items-start justify-between mb-2">
+                        <h4 className="font-medium text-foreground">{event.title}</h4>
+                        <div className="flex items-center gap-1 text-sm text-primary bg-primary/10 px-2 py-1 rounded-full">
+                          <Clock className="w-3 h-3" />
+                          {event.time}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <MapPin className="w-4 h-4" />
+                        <span className="font-medium">{event.city}</span>
+                        <span>•</span>
+                        <span>{event.location}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="bg-card rounded-2xl p-6 mb-8 card-shadow">
           <div className="flex items-center gap-2 mb-4">
