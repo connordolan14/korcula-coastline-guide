@@ -2,7 +2,7 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import ActivityCard from '../components/ActivityCard';
-import { Utensils, Wine, Waves, Mountain, Boat } from 'lucide-react';
+import { Utensils, Wine, Waves, Mountain, Ship } from 'lucide-react';
 
 const Activities = () => {
   const restaurants = [
@@ -129,65 +129,6 @@ const Activities = () => {
       description: 'Popular late-night bar with music and a casual vibe.',
       category: 'Night Bar',
       image: 'https://img.restaurantguru.com/cc75-Deja-Vu-Korcula-design-1.jpg'
-    }
-  ];
-
-  const beaches = [
-    {
-      id: '1',
-      title: 'Lumbarda',
-      description: 'Quiet beach town known for Grk wine and scenic waterfront views.',
-      category: 'Coastal Village',
-      image: 'https://www.korcula-larus.com/wp-content/uploads/2015/02/summer-sand-beach-lumbarda.jpg'
-    },
-    {
-      id: '2',
-      title: 'Pupnatska Luka',
-      description: 'Beautiful cove with turquoise waters and white-pebble shore.',
-      category: 'Cove Beach',
-      image: 'https://jaywaytravel.com/wp-content/uploads/2023/03/Pupnatska-Luka-croatia.jpg'
-    },
-    {
-      id: '3',
-      title: 'Bacva',
-      description: 'Remote beach with minimal crowds and clear waters.',
-      category: 'Hidden Beach',
-      image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/67/a9/9d/caption.jpg?w=900&h=500&s=1'
-    },
-    {
-      id: '4',
-      title: 'Moro Beach',
-      description: 'Lesser-known sandy beach for quiet swimming and sunbathing.',
-      category: 'Secluded Beach',
-      image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/39/d5/e6/vela-stupa-island.jpg?w=900&h=500&s=1'
-    },
-    {
-      id: '5',
-      title: 'Samograd Bay',
-      description: 'Accessible mainly by boat; clear water and rugged coastline.',
-      category: 'Boat-In Beach',
-      image: 'https://beaches-searcher.com/images/beaches/191221760/HR221760.jpg'
-    },
-    {
-      id: '6',
-      title: 'Zitna Beach',
-      description: 'Small, sandy beach with shallow entry, ideal for families.',
-      category: 'Family-Friendly',
-      image: 'https://www.croatiagems.com/wp-content/uploads/2015/12/Zitna-Beach-Zavalatica-Korcula-Island-3-1024x768.jpg'
-    },
-    {
-      id: '7',
-      title: 'Bili Zal',
-      description: 'A pebbly beach with crystal-clear water and dramatic rocky surroundings.',
-      category: 'Rocky Beach',
-      image: 'https://img.adriagate.com/cdn/new/photos/2439170-15/beach-bilin-zal-lumbarda-island-korcula_0_550.jpg'
-    },
-    {
-      id: '8',
-      title: 'Pržina',
-      description: 'One of the few sandy beaches on the island, popular with locals and tourists.',
-      category: 'Sandy Beach',
-      image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/75/c3/0c/beach-przina-lumbarda.jpg?w=700&h=400&s=1'
     }
   ];
 
@@ -420,9 +361,8 @@ const Activities = () => {
 
         <ActivitySection title="Restaurants" items={restaurants} icon={Utensils} />
         <ActivitySection title="Bars & Nightlife" items={bars} icon={Wine} />
-        <ActivitySection title="Beaches" items={beaches} icon={Waves} />
         <ActivitySection title="Outdoor Activities" items={outdoorActivities} icon={Mountain} />
-        <ActivitySection title="Boat Trips to Other Islands" items={boatTrips} icon={Boat} />
+        <ActivitySection title="Boat Trips to Other Islands" items={boatTrips} icon={Ship} />
 
         {/* Interactive Google Map */}
         <div className="bg-card rounded-2xl p-6 card-shadow">
