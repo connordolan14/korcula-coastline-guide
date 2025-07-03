@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import ActivityCard from '../components/ActivityCard';
@@ -6,7 +7,8 @@ import { Calendar, Clock, MapPin } from 'lucide-react';
 const Itinerary = () => {
   const weeklyEvents = [
     {
-      date: 'Saturday, July 26',
+      date: 'Saturday',
+      dateNumber: 'July 26',
       events: [
         {
           title: 'Theatre play / Masks / UO Group',
@@ -23,7 +25,8 @@ const Itinerary = () => {
       ]
     },
     {
-      date: 'Sunday, July 27',
+      date: 'Sunday',
+      dateNumber: 'July 27',
       events: [
         {
           title: 'Grk Wine Festival 2025',
@@ -40,7 +43,8 @@ const Itinerary = () => {
       ]
     },
     {
-      date: 'Monday, July 28',
+      date: 'Monday',
+      dateNumber: 'July 28',
       events: [
         {
           title: 'Moreška sword dance performance',
@@ -57,7 +61,8 @@ const Itinerary = () => {
       ]
     },
     {
-      date: 'Tuesday, July 29',
+      date: 'Tuesday',
+      dateNumber: 'July 29',
       events: [
         {
           title: 'Ante Kriletić Jordes - Exhibition Opening',
@@ -74,7 +79,8 @@ const Itinerary = () => {
       ]
     },
     {
-      date: 'Wednesday, July 30',
+      date: 'Wednesday',
+      dateNumber: 'July 30',
       events: [
         {
           title: 'Blato Wine and Dine - Okusi mirisi zavičaja',
@@ -97,7 +103,8 @@ const Itinerary = () => {
       ]
     },
     {
-      date: 'Thursday, July 31',
+      date: 'Thursday',
+      dateNumber: 'July 31',
       events: [
         {
           title: 'Children Art and Craft Fair',
@@ -114,7 +121,8 @@ const Itinerary = () => {
       ]
     },
     {
-      date: 'Friday, August 1',
+      date: 'Friday',
+      dateNumber: 'August 1',
       events: [
         {
           title: 'Blato Wine Night',
@@ -203,6 +211,7 @@ const Itinerary = () => {
         <PageHeader 
           title="Week Schedule"
           subtitle="Korčula Harbor Week 31"
+          backgroundImage="https://www.korculaexplorer.com/wp-content/uploads/2019/11/Korcula-Beaches-Header.jpg"
         />
 
         {/* Weekly Schedule Section */}
@@ -211,29 +220,40 @@ const Itinerary = () => {
             <Calendar className="w-6 h-6 text-primary" />
             <div>
               <h2 className="text-2xl font-bold">Korčula Official Town Schedule</h2>
-              <p className="text-muted-foreground">Korcula Harbor Week 31</p>
+              <a 
+                href="https://www.visitkorcula.eu/events-calendar.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors underline"
+              >
+                Visit Town Website
+              </a>
             </div>
           </div>
           
-          <div className="space-y-6">
+          {/* Horizontal Weekly Calendar Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-7 gap-4">
             {weeklyEvents.map((day, dayIndex) => (
-              <div key={dayIndex} className="border-l-4 border-primary pl-4">
-                <h3 className="text-lg font-semibold mb-3 text-primary">{day.date}</h3>
+              <div key={dayIndex} className="bg-accent/10 rounded-lg p-4 min-h-[200px]">
+                <div className="border-b border-primary/20 pb-2 mb-3">
+                  <h3 className="font-bold text-primary text-center">{day.date}</h3>
+                  <p className="text-sm text-muted-foreground text-center">{day.dateNumber}</p>
+                </div>
                 <div className="space-y-3">
                   {day.events.map((event, eventIndex) => (
-                    <div key={eventIndex} className="bg-accent/20 rounded-lg p-4">
-                      <div className="flex items-start justify-between mb-2">
-                        <h4 className="font-medium text-foreground">{event.title}</h4>
-                        <div className="flex items-center gap-1 text-sm text-primary bg-primary/10 px-2 py-1 rounded-full">
-                          <Clock className="w-3 h-3" />
-                          {event.time}
-                        </div>
+                    <div key={eventIndex} className="bg-card rounded p-3 text-xs">
+                      <div className="flex items-center gap-1 mb-1">
+                        <Clock className="w-3 h-3 text-primary" />
+                        <span className="text-primary font-medium">{event.time}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="w-4 h-4" />
-                        <span className="font-medium">{event.city}</span>
-                        <span>•</span>
-                        <span>{event.location}</span>
+                      <h4 className="font-medium text-foreground mb-1 leading-tight">{event.title}</h4>
+                      <div className="flex items-start gap-1 text-muted-foreground">
+                        <MapPin className="w-3 h-3 mt-0.5 flex-shrink-0" />
+                        <div className="leading-tight">
+                          <span className="font-medium">{event.city}</span>
+                          <br />
+                          <span className="text-xs">{event.location}</span>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -288,15 +308,6 @@ const Itinerary = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="bg-primary/10 rounded-2xl p-6 mt-8 text-center">
-          <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-          <h3 className="text-lg font-semibold mb-2">Need Help Planning?</h3>
-          <p className="text-muted-foreground text-sm">
-            Local tourist information centers and your accommodation hosts can provide 
-            personalized recommendations and help with bookings.
-          </p>
         </div>
       </div>
     </div>
