@@ -1,8 +1,6 @@
 
 import React from 'react';
 import PageHeader from '../components/PageHeader';
-import CTAButton from '../components/CTAButton';
-import { MapPin, Building, Grape, Calendar } from 'lucide-react';
 
 const Home = () => {
   return (
@@ -10,48 +8,30 @@ const Home = () => {
       <div className="container mx-auto px-4 py-6">
         {/* Hero Section */}
         <PageHeader 
-          title="Welcome to Korčula"
-          subtitle="Our Croatian Family Adventure"
+          title="Korčula Week 31"
+          subtitle="Dolan, Nunes, & Galatiotos Go Mobile"
           backgroundImage="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80"
         />
 
-        {/* Introduction Section */}
+        {/* About Section */}
         <div className="bg-card rounded-2xl p-6 mb-8 card-shadow">
-          <h2 className="text-2xl font-bold mb-4 text-center">About Our Trip</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center">About Korčula</h2>
           <p className="text-muted-foreground leading-relaxed text-center">
-            Join us for an unforgettable family vacation on the beautiful island of Korčula, Croatia. 
-            Discover medieval towns, pristine beaches, world-class wineries, and create memories that will last a lifetime.
+            Nestled in the Adriatic Sea, Korčula is a sun-drenched Croatian island known for its rich history, vibrant culture, and stunning natural landscapes. Often called "Little Dubrovnik" for its medieval architecture and fortified Old Town, Korčula blends ancient charm with relaxed island living. Visitors can explore quiet beaches, scenic vineyards, and traditional villages while enjoying local wines like Grk and Pošip, fresh seafood, and authentic cultural experiences such as the Moreška sword dance. Whether you're here to unwind or explore, Korčula offers something for everyone.
           </p>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="space-y-4">
-          <CTAButton to="/activities" icon={MapPin}>
-            Explore Activities
-          </CTAButton>
-          
-          <CTAButton to="/house" icon={Building} variant="secondary">
-            See Our House
-          </CTAButton>
-          
-          <CTAButton to="/wine-tours" icon={Grape}>
-            Wine Tours
-          </CTAButton>
-          
-          <CTAButton to="/itinerary" icon={Calendar} variant="secondary">
-            Itinerary Ideas
-          </CTAButton>
-        </div>
-
-        {/* Quick Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-          <div className="bg-accent/30 rounded-2xl p-4 text-center">
-            <h3 className="font-semibold mb-2">Best Time to Visit</h3>
-            <p className="text-sm text-muted-foreground">May - September for warm weather</p>
-          </div>
-          <div className="bg-primary/10 rounded-2xl p-4 text-center">
-            <h3 className="font-semibold mb-2">Getting Around</h3>
-            <p className="text-sm text-muted-foreground">Walking, biking, or local transport</p>
+        {/* Travel Map Image */}
+        <div className="bg-card rounded-2xl p-6 mb-8 card-shadow">
+          <div className="text-center">
+            <img 
+              src="/lovable-uploads/533b5f9f-b50c-4b45-a84c-5bab6840c3b7.png" 
+              alt="Travel route from Basin Harbor to Korčula"
+              className="w-full rounded-lg mb-4"
+            />
+            <p className="text-xl font-semibold text-foreground">
+              From Basin Harbor to the Balkans - same crew, new coastline.
+            </p>
           </div>
         </div>
       </div>
